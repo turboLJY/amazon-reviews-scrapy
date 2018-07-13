@@ -45,6 +45,9 @@ def main():
     asin_data['Store'] = pd.Series(s)
 
     # Save ASIN Database
+    cwd = os.getcwd()
+    if not os.path.exists(cwd+'\\Data'):
+        os.makedirs(cwd+'\\Data', exist_ok=True)
     print("Saving ASIN Database...")
     asin_data.to_excel('./Data/ASIN_Data.xlsx')
 
