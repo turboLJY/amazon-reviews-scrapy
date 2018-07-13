@@ -13,10 +13,12 @@ class ASINSpider(scrapy.Spider):
 
     def __init__(self, store=None, key=None, *args, **kwargs):
         super(ASINSpider, self).__init__(*args, **kwargs)
+        self.store = store
+        self.key = key
         if not store:
             raise Exception('store is required')
 
-        self.start_urls = ['https://www.{0}/s/?keywords={1}'.format(store, key)]
+        self.start_urls = ['https://www.{0}/s/?keywords={1}'.format(self.store, self.key)]
 
     def parse(self, response):
         for item in response.css('li.s-result-item'):
