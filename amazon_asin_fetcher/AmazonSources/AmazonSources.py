@@ -10,7 +10,6 @@ class AMS():
     def __init__(self):
         self.stores = {
                        'India': 'amazon.in',
-                       'China': 'amazon.cn',
                        'Japan': 'amazon.co.jp',
                        'France': 'amazon.fr',
                        'Germany': 'amazon.de',
@@ -23,11 +22,11 @@ class AMS():
                        'US': 'amazon.com',
                        'Australia': 'amazon.com.au',
                        'Brazil': 'amazon.br',
+                       'China': 'amazon.cn'
                        }
 
         self.region = {
                        'India': 'Asia',
-                       'China': 'Asia',
                        'Japan': 'Asia',
                        'France': 'Europe',
                        'Germany': 'Europe',
@@ -40,4 +39,5 @@ class AMS():
                        'US': 'North America',
                        'Australia': 'Oceania',
                        'Brazil': 'South America',
+                       'China': 'Asia',
                        }
