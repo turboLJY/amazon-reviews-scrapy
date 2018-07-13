@@ -29,7 +29,7 @@ def main(country=None, key=None):
         if country == "all":
             for c, s in ams.stores.items():
                 output_file = './Output/asin_' + c + '.json'
-                command = 'scrapy crawl asin -a country={0} -a key={1} -o {2}'.format(s, key, output_file)
+                command = 'scrapy crawl asin -a store={0} -a key={1} -o {2}'.format(s, key, output_file)
                 print("\n~~~~~~\n{0}\n~~~~~~\n".format(command))
                 p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=False)
                 (output, err) = p.communicate()
