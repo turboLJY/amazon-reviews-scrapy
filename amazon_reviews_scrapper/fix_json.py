@@ -43,6 +43,9 @@ def check(json_files):
 
 
 def main():
+    """
+    Fixes and checks repair of broken JSON files created by the Scrapy spider.
+    """
     # Fetch All JSON Files
     print("Fetching JSON Files...")
     json_files = [f for f in os.listdir('./Output/Original') if path.isfile(path.join('./Output/Original', f))]
