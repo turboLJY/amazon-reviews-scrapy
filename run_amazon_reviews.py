@@ -60,6 +60,7 @@ def run_for_reviews(command):
 def main(country=None, key=None):
     print(figlet_format("Amazon Reviews Web Scrapper"))
     commands_for_asin = ['python run_asin_fetcher.py -c {0} -k {1}'.format(country, key),
+                         'python fix_json.py',
                          'python json2excel.py']
     commands_for_reviews = ['python run_reviews_scrapper.py',
                             'python fix_json.py',

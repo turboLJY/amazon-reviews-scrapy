@@ -18,7 +18,7 @@ def create_df(json_files):
     asin = []
     product = []
     for file in tqdm(json_files):
-        f = json.load(open('./Output/'+file, 'r'))
+        f = json.load(open('./Output/New/'+file, 'r'))
         country.extend([file.split('.')[0].split('_')[1] for i in range(len(f))])
         asin.extend([i['ASIN'] for i in f])
         product.extend([i['Product'] for i in f])
@@ -32,7 +32,7 @@ def main():
     ams = AMS()
     # Fetch All JSON Files
     print("Fetching JSON Files...")
-    json_files = [f for f in os.listdir('./Output') if isfile(join('./Output', f))]
+    json_files = [f for f in os.listdir('./Output/New/') if isfile(join('./Output/New/', f))]
 
     # Create ASIN Database
     print("Creating ASIN Database...")

@@ -28,7 +28,7 @@ def main(country=None, key=None):
     else:
         if country == "all":
             for c, s in ams.stores.items():
-                output_file = './Output/asin_' + c + '.json'
+                output_file = './Output/Original/asin_' + c + '.json'
                 command = 'scrapy crawl asin -a store={0} -a key={1} -o {2}'.format(s, key, output_file)
                 print("\n~~~~~~\n{0}\n~~~~~~\n".format(command))
                 p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=False)
@@ -39,7 +39,7 @@ def main(country=None, key=None):
         else:
             try:
                 s = ams.stores[country]
-                output_file = './Output/asin_' + country + '.json'
+                output_file = './Output/Original/asin_' + country + '.json'
                 command = 'scrapy crawl asin -a store={0} -a key={1} -o {2}'.format(s, key, output_file)
                 print("\n~~~~~~\n{0}\n~~~~~~\n".format(command))
                 p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=False)
